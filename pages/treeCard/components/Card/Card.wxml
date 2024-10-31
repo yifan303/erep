@@ -1,0 +1,4 @@
+<!-- components/Card/Card.wxml -->
+<view class="card" bindtap="handleClick">
+  <text>{{node.name}}</text>
+</view>

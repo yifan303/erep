@@ -1,0 +1,78 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 16px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* margin-bottom: 20px; */
+  font-size: 14px;
+  color: #333;
+  gap: 8px; /* 路径项之间的间距 */
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.breadcrumb-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 10px solid #3A3A3A; /* 分隔箭头前景色 */
+  z-index: 0;
+}
+.breadcrumb-item:last-child::after,
+.breadcrumb-item:last-child::before {
+  display: none; /* 移除最后一项的箭头 */
+}
+.breadcrumb-name {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+.name-order {
+  border: 0.5px solid #666;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 16px;
+  border-radius: 100%;
+  margin-right: 4px;
+}
+.breadcrumb-item:hover {
+  color: #007aff;
+}
+
+.breadcrumb-active {
+  color: #007aff;
+  font-weight: bold;
+}
+.breadcrumb-active .name-order {
+  border: 0.5px solid #007aff;
+}
+
+.separator {
+  margin: 0 4px;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

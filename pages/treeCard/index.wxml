@@ -1,0 +1,30 @@
+<!-- pages/index/index.wxml -->
+<view class="container" style="position: absolute; left: 2rpx; top: -2rpx">
+
+<!-- 卡片展示当前层级的节点 -->
+<view class="card-container">
+  <card style="position: relative; left: 22rpx; top: 0rpx"
+    wx:for="{{currentNodes}}"
+    wx:key="{{item.id}}"
+    node="{{item}}"
+    bind:select="selectNode"
+  />
+</view>
+
+<!-- 面包屑导航 -->
+<view class="breadcrumb">
+  <view
+    wx:for="{{breadcrumb}}"
+    wx:key="*this"
+    data-index="{{index}}"
+    bindtap="goToLevel"
+    class="breadcrumb-item {{index === breadcrumb.length - 1 ? 'breadcrumb-active' : ''}}"
+  >
+    <view class="breadcrumb-name">
+    <view class="name-order">{{index+1}}</view>
+      {{item.name}}
+    </view>
+    <!-- <text wx:if="{{index < breadcrumb.length - 1}}" class="separator">▶</text> -->
+  </view>
+</view>
+</view>
